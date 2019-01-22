@@ -7,10 +7,13 @@ verify_ssl = true
 pycodestyle = "*"
 pytest = "*"
 pytest-spec = "*"
+autopep8 = "*"
 
 [packages]
 beautifulsoup4 = "*"
 dateparser = "*"
+flask = "*"
+pydash = "*"
 
 [requires]
 python_version = "2.7"

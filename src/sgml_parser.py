@@ -5,6 +5,7 @@ Can tolerate some missing tags, such as BODY in TEXT
 """
 from bs4 import BeautifulSoup
 import dateparser
+from schema import attributes, metas
 
 
 def parse(stream):
@@ -16,8 +17,6 @@ def parse(stream):
 
 
 def parse_reuters_tag(reuters_tag):
-    attributes = ['cgisplit', 'lewissplit', 'newid', 'topics', 'oldid']
-    metas = ['companies', 'exchanges', 'orgs', 'people', 'places', 'topics']
     article = {'meta': {}}
     for attribute in attributes:
         article[attribute] = reuters_tag.get(attribute)

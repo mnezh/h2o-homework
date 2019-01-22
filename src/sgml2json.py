@@ -1,13 +1,24 @@
 #!/usr/bin/env python
+'''
+Since parsing SGML is too slow to be performed each time
+API starts, let's convert to something more digestible.
+I've decided to use JSON as it is a quick win, although
+if I needed to do something more durable, I'd rather ETL
+data into database, SQLite or something like this.
+
+However, for a homework JSON a good enough, knowing the
+limitations.
+'''
+
 import argparse
 import json
 from sgml_parser import parse as parse_sgml
-from serialize_datetime import serialize
+from serialize_datetime import dump_serialize
 
 
 def main():
     input, output = get_input_output_args()
-    json.dump(parse_sgml(input), output, default=serialize)
+    json.dump(parse_sgml(input), output, default=dump_serialize)
 
 
 def get_input_output_args():
