@@ -75,11 +75,11 @@ Get all articles from 1987:
 ```
 curl http://127.0.0.1:9666/article\?year\=1987
 ```
-Get all articles about USA, Japan and Reagan from 1987:
+Get all articles about USA, Iran and Reagan from 1987:
 ```
-curl http://127.0.0.1:9666/article\?year\=1987\&people\=reagan\&places\=usa,japan
+curl http://127.0.0.1:9666/article\?year\=1987\&meta.people\=reagan\&meta.places\=iran
 ```
-Get all articles about USA, Japan and Reagan from 1987 which mention Exchange Commission:
+Get all articles about USA, Iran and Reagan from 1987 which mention Texas:
 ```
-curl http://127.0.0.1:9666/article\?year\=1987\&people\=reagan\&places\=usa,japan\&text.body\=Exchange%20Commission
+curl http://127.0.0.1:9666/article\?year\=1987\&meta.people\=reagan\&meta.places\=iran\&text.body\=Texas
 ```
