@@ -23,3 +23,10 @@ precommit: lint test
 
 run:
 	pipenv run src/app.py
+
+docker:
+	docker build --tag reuters-api:latest .
+
+docker-run:
+	-docker rm reuters-api
+	docker run -p 9666:9666 --name reuters-api reuters-api:latest 
